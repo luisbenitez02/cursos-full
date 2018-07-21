@@ -23,7 +23,21 @@ print('objeto dentro de otro', persona.ubicacion.ciudad);
 print('Funcion dentro de objeto',persona.hablar());
 
 print('Acceso a los mismos elementos', persona.hablar() );//desde el objeto
-     
+    
+//Arreglo de objetos
+const autos =[
+    {modelo:'Spark GT', motor: 1.6},
+    {modelo: 'M2', motor: 1.8},
+    {modelo: 'i10', motor: 1.4 },
+];
+
+print('Funcion con objetos',autos);
+
+for (let i = 0; i < autos.length; i++) {
+    print('auto #'+i, autos[i].modelo);
+    
+}
+
 /**
  * Funcion para imprimir
  */
