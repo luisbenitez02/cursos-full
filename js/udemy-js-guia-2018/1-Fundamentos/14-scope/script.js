@@ -1,28 +1,28 @@
-//const nombre = prompt();
-//console.log(`Bienvenido ${nombre}`);
+var a = 'Viviana';
+let b = 'Perrito';
+const c = 18;
 
-/*if (confirm('¿eliminar?')) {
-    console.log('Eliminado'); 
-} else{
-    console.log('No borramos nada');
+//scope de la funcion
+function theScope() {
+    var a = 'VIVIANA';
+    let b = 'Vakishu';
+    const c = 30;
+
+    console.log('--------En la Funcion------');
+    console.log(a,b,c);
+      
+}
+
+theScope();
+
+if (true) {
+    var a= "Luis Hernando";
+    let b= 'Muñeca';
+    const c = 102;
+    console.log('--------Bloque----------');
+    console.log(a, b, c);
     
-}*/
+}
 
-let altura,
-    ancho;
-
-altura = window.outerHeight;
-ancho = window.outerWidth;
-
-console.log(altura);
-console.log(ancho);
-
-//tamaño total (cuenta el tamaño del navegador )
-altura_2 = window.innerHeight;
-ancho_2 = window.innerWidth;
-
-console.log(altura_2);
-console.log(ancho_2);
-
-//ubicacion
-console.log(window.location);
+console.log('------------Globales-----------');
+console.log(a, b, c);
