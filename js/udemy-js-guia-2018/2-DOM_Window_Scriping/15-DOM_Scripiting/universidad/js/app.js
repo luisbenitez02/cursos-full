@@ -64,3 +64,68 @@ console.log(cursos);
 console.log(enlaces[0].parentElement.parentElement.parentElement);
 console.log(enlaces[4].previousElementSibling.previousElementSibling);
 
+/**
+ * 
+ * ----------------------------------------CREANDO ELEMENTOS CON JS
+ */
+
+//creando enlace
+
+const miEnlace = document.createElement('a');
+//agregando clase
+miEnlace.className = 'enlace';
+miEnlace.id = 'nuevo-id';
+
+miEnlace.setAttribute('href', '#');
+
+miEnlace.textContent = 'Nuevo Enlace';
+
+console.log(miEnlace);
+
+//agregando al HTMl
+document.querySelector('#secundaria').appendChild(miEnlace);
+
+/**
+ * Reemplazando elementos
+ */
+const nuevoEncabezado = documento.createElement('h2');
+nuevoEncabezado.id = 'encabezado';
+nuevoEncabezado.appendChild(document.createTextNode('Los Mejores Cursos'));
+
+const anterior = document.querySelector('#encabezado');
+
+const elPadre = document.querySelector('#lista-cursos');
+
+//Reemplazar
+elPadre.replaceChild(nuevoEncabezado,anterior);
+
+/**
+ * AGREGANDO Y QUITANDO CLASES Y OTROS ATRIBUTOS--------------------------------
+ */
+const enlacesitos = document.querySelector('.enlace');
+const navegacion = document.querySelector('#principal');
+
+//enlacesitos[0].remove();//elimino enlace
+navegacion.removeChild(enlaces[0]);
+
+//agregando y quitando elementos
+const primerLi = document.querySelector('.enlace');
+let elemento;
+//obtener una clase de CSS
+elemento = primerLi.className;
+elemento = primerLi.classList.add('nueva-clase');
+elemento = primerLi.classList.remove("nueva-clase");
+elemento = primerLi.classList;
+
+console.log(elemento);
+
+//leer atributos
+elemento = primerLi.getAttribute('href');
+primerLi.setAttribute("href",'http://facebook.com');
+elemento = primerLi;
+
+primerLi.setAttribute('data-id',20);//atributos personalziados
+primerLi.hasAttribute('data-id');//comprueba si existe el atributo
+primerLi.removeAttribute('data-id');//eliminando atributo
+console.log(elemento);
+
