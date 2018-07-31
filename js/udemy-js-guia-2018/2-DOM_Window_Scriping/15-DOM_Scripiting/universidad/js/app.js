@@ -38,3 +38,29 @@ enlaces_3.forEach(function(impares){
      impares.style.backgroundColor = 'red';
      impares.style.color = 'white';
 });
+
+
+/**
+ * TRASVERSING----------------------------------------------------------------------
+ * Vamos a obtener los hijos de su padre, a seleccionar elementos como en CSS
+ * pero mejorado
+ */
+const navegacion = document.querySelector('#principal');
+
+console.log(navegacion.children);
+
+//cambiando el texto al primer enlace
+console.log(navegacion.children[0].textContent = 'Nuevo Enlace');
+
+const barra = document.querySelector(".barra");
+console.log(barra.children[0].children[0].children);
+
+//seleccionando todos los cursos
+const cursos = document.querySelectorAll(".card");
+console.log(cursos);
+//podemos contar cuantos elementos hay
+
+//--------------TREVERSING DEL PADRE HACIA EL HIJO
+console.log(enlaces[0].parentElement.parentElement.parentElement);
+console.log(enlaces[4].previousElementSibling.previousElementSibling);
+
