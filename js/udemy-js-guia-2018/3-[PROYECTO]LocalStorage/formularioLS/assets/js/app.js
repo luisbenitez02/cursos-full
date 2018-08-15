@@ -47,13 +47,15 @@ function agregarTarea(e) {
  */
 function borrarTweet(e) {
   e.preventDefault();
-  console.log("Diste click en al lista");
+  //console.log("Diste click en al lista");
 
   if (e.target.className === "borrar-tweet") {
-    console.log(e.target.parentElement.remove()); //eliminar elemento
-    alert("Tarea Eliminada");
+    e.target.parentElement.remove(); //eliminar elemento
+    //Llamada a funcion: le pasamos el texto que deseamos buscar en el JSOn para luego borrarlo
+    borrarTareaLocalStorage(e.target.parentElement.innerText);
+    
   } else {
-    console.log("Diste click en otro  lugar");
+    //console.log("Diste click en otro  lugar");
   }
 }
 
@@ -112,4 +114,23 @@ function localStorageListo() {
     //ahora tomo el padre donde va a ir mi elemento li
     listaTareas.appendChild(li);
   });
+}
+
+/**
+ * Eliminar Tareas de LocalStorage
+ */
+function borrarTareaLocalStorage(tarea) {
+    let tareas, tareaBorrar;
+    //elimina la x de la tarea
+    tareaBorrar = tarea.substring(0, tarea.length -1);//corta todo menos la ultima letra
+    
+    tareas = obtenerTareasLocalStorage();
+
+    tareas.forEach(function name(tarea, index) {
+        //Buscamos el texto y lo eliminamos
+        if (tareaBorrar === tarea) {
+            tareas.splice(index,1);//despues de index, cuanto eliminas?     
+        }
+    });
+    localStorage.setItem('tareas', JSON.stringify(tareas));
 }
